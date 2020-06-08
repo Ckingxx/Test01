@@ -19,9 +19,9 @@ public class UploadFile {
         }
         return false;
     }
- public static boolean isNull(){
-        boolean flag = true;
-        return flag;
+ public static boolean isBlank(){
+        boolean f = true;
+        return f;
  }
     /**
      * 保存文件
