@@ -19,7 +19,9 @@ public class UploadFile {
         }
         return false;
     }
-
+ public static boolean isNull(){
+        return false;
+ }
     /**
      * 保存文件
      * @param request
