@@ -19,10 +19,11 @@ public class UploadFile {
         }
         return false;
     }
- public static boolean isBlank(){
+ public static void isBlank(){
         boolean f = true;
-        return f;
+     System.out.println(f);
  }
+
     /**
      * 保存文件
      * @param request
