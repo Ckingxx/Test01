@@ -1,0 +1,61 @@
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<meta charset="utf-8">
+<head th:include="include::header"></head>
+<title>导入</title>
+<style type="text/css">
+    .message .files {
+        position: absolute;
+        left: -1000px;
+        top: 52px;
+        heigth: 26px;
+        cursor: pointer;
+        filter: Alpha(opacity = 0);
+        -moz-opacity: 0;
+        opacity: 0;
+    }
+</style>
+</head>
+<body>
+<form id="signupForm"  method="post" enctype="multipart/form-data">
+    <input name="publishTaskId" id="publishTaskId" th:value="${publishTaskId}" hidden>
+    <div id="dpLTE" class="container-fluid tc-box">
+        <table class="form" id="form" style="table-layout: fixed;">
+            <tr>
+                <td colspan="2">
+                    <a id="zhCna"
+                       href='/modelExcle/fieldTemplate.xlsx'>
+                        <button type="button" class="btn btn-default"
+                                style="margin-bottom: 10px">
+                            <i class="fa fa-download"></i> 下载导入模板
+                        </button>
+                    </a>
+                    <div class="alert alert-warning">提示：请先下载批量导入模板-excel文件，按格式填写后上传提交，方可导入；
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="text" id="txt" name="txt"
+                           class="input form-control" value="文件域" disabled="disabled" /></td>
+                <td class="message">
+                    <input type="button"
+                           onMouseMove="f.style.pixelLeft=event.x-60;f.style.pixelTop=this.offsetTop;"
+                           value="选择文件" size="30" onClick="f.click()" class="btn btn-orange"
+                           style="margin-left: 10px">
+                    <input type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" name="SensitiveExcle" id="f"
+                           onChange="txt.value=this.value" style="height: 26px;" class="files" size="1" hidefocus>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-6 col-sm-offset-5">
+            <button type="submit" class="btn btn-primary">提交</button>
+        </div>
+    </div>
+</form>
+<div th:include="include::footer"></div>
+
+<script src="./import.js"></script>
+</body>
+</html>
