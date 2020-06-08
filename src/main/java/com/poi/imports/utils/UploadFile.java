@@ -20,7 +20,8 @@ public class UploadFile {
         return false;
     }
  public static boolean isNull(){
-        return false;
+        boolean flag = true;
+        return flag;
  }
     /**
      * 保存文件
